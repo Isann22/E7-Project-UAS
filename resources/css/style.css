@@ -1,0 +1,57 @@
+@import url(https://fonts.bunny.net/css?family=poppins);
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: rgb(57, 40, 159);
+    background: linear-gradient(
+        87deg,
+        rgba(57, 40, 159, 1) 0%,
+        rgba(66, 47, 156, 1) 100%
+    );
+}
+
+#app nav {
+    font-size: 13px;
+}
+
+.content {
+    padding: 20px 0px 63px 0px;
+}
+.content .container .c {
+    text-align: center;
+}
+
+.content .card {
+    border-radius: 10px;
+    background-color: #1c140f;
+    color: white;
+    -webkit-box-shadow: 8px 5px 1px 5px rgba(158, 8, 158, 1);
+    -moz-box-shadow: 8px 5px 1px 5px rgba(158, 8, 158, 1);
+    box-shadow: 8px 5px 1px 5px rgba(158, 8, 158, 1);
+}
+.content .card a {
+    text-decoration: none;
+}
+.content .card a:hover {
+    text-decoration: underline;
+}
+
+.content .card .btn.ctas {
+    background-color: #fa9021;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .content .container .c {
+        width: 50%;
+        text-align: left;
+    }
+}
+@media (max-width: 910px) {
+    .content .container .c {
+        width: 100%;
+        text-align: center;
+    }
+}
