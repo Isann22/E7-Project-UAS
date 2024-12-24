@@ -5,7 +5,7 @@
         <div class="container d-flex flex-column  flex-lg-row-reverse gap-4  justify-content-center align-items-center">
             <div class="c text-dark">
                 <div class="text-white ps-5 ">
-                    <h1>login now</h1>
+                    <h1>Register now</h1>
                     <p class="fw-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam in nemo sed
                         sint
                         libero
