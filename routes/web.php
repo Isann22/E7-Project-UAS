@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GithubController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +19,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::controller(GithubController::class)->group(function () {
+    Route::get('auth/github', 'redirectToGithub')->name('auth.github');
+    Route::get('auth/github/callback', 'handleGithubCallback');
+});
+
+Route::controller(GoogleController::class)->group(function () {
+    Route::get('auth/google', 'redirect')->name('auth.google');
+    Route::get('auth/google/callback', 'googleCallback');
+});
+
+require __DIR__ . '/auth.php';
