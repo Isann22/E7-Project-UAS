@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GithubController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +32,5 @@ Route::controller(GoogleController::class)->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
