@@ -12,9 +12,12 @@ class CreateVenuesTable extends Migration
             $table->id();
             $table->string('name', 100); // Nama venue
             $table->string('location', 255); // Lokasi venue
+            $table->string('address', 255); // Alamat venue
+            $table->integer('capacity'); // Kapasitas venue
             $table->timestamps();
         });
     }
+
     public function down()
     {
         Schema::dropIfExists('venues');
