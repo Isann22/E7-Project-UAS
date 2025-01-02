@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
 Route::controller(GithubController::class)->group(function () {
     Route::get('auth/github', 'redirectToGithub')->name('auth.github');
     Route::get('auth/github/callback', 'handleGithubCallback');
@@ -29,6 +31,11 @@ Route::controller(GithubController::class)->group(function () {
 Route::controller(GoogleController::class)->group(function () {
     Route::get('auth/google', 'redirect')->name('auth.google');
     Route::get('auth/google/callback', 'googleCallback');
+});
+
+//test
+Route::get('/test/order', function () {
+    return view('orders.index');
 });
 
 require __DIR__ . '/auth.php';
