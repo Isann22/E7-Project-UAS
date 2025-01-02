@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,21 +13,64 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/logo.ico') }}">
+    <link href="https://fonts.bunny.net/css?family=poppins:100" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/dashboard.css'])
 
     @stack('styles')
+
 </head>
-<body>
+
+<body style="font-family: 'Poppins', sans-serif;"">
     <div id="app">
         @include('layouts.navigation')
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
 
-    @stack('scripts')
+    <main class="content py-5 mt-5" style="min-height: 100vh;position: relative">
+        @yield('content')
+    </main>
+
+
+    @include('layouts.footer')
+
+
+    <div class="footer">
+        @stack('scripts')
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+            function() {
+                const navItems = document
+                    .querySelectorAll('.nav-link');
+
+                navItems.forEach(item => {
+                    item.addEventListener('click',
+                        function() {
+                            navItems.forEach(navItem => navItem
+                                .classList.remove('active'));
+                            this.classList.add('active');
+                        });
+                });
+            });
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-80px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+
+
+
 </body>
+
 </html>
