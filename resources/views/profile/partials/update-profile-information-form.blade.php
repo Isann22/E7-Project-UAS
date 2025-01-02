@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card card-name">
     <div class="card-header">{{ __('Profile Information') }}</div>
 
     <div class="card-body">

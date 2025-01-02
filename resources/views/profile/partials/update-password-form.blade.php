@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card card-name">
     <div class="card-header">{{ __('Update Password') }}</div>
 
     <div class="card-body">
