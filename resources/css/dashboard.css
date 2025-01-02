@@ -1,0 +1,207 @@
+@import url(https://fonts.bunny.net/css?family=poppins);
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --shadow-horizontal-offset: 8px;
+    --shadow-vertical-offset: 5px;
+    --shadow-blur-radius: 1px;
+    --shadow-spread-radius: 2px;
+    --shadow-color: rgba(158, 8, 158, 1);
+}
+
+body {
+    background: rgb(57, 40, 159);
+    background: linear-gradient(
+        87deg,
+        rgba(57, 40, 159, 1) 0%,
+        rgba(66, 47, 156, 1) 100%
+    );
+}
+
+.nav-link.active {
+    position: relative;
+}
+.nav-link.active::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: orange;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.profile .dropdown-menu {
+    background-color: #1c140f;
+    -webkit-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    -moz-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+        var(--shadow-blur-radius) var(--shadow-spread-radius)
+        var(--shadow-color);
+}
+
+.profile .dropdown-menu a {
+    color: white;
+    background-color: #1c140f;
+}
+.profile .dropdown-menu a:hover {
+    color: white;
+    background-color: rgba(158, 8, 158, 1);
+}
+
+.order {
+    border-radius: 10px;
+    background-color: #1c140f;
+    color: white;
+
+    -webkit-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    -moz-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+        var(--shadow-blur-radius) var(--shadow-spread-radius)
+        var(--shadow-color);
+}
+
+.order .card-header {
+    border-bottom: 2px solid orange;
+}
+
+.edit .card-name {
+    border-radius: 10px;
+    background-color: #1c140f;
+    color: white;
+    -webkit-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    -moz-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+        var(--shadow-blur-radius) var(--shadow-spread-radius)
+        var(--shadow-color);
+}
+
+hr {
+    border: 10px solid rgb(211, 142, 211);
+    border-radius: 5px;
+}
+
+.tournament {
+    background-color: #1c140f;
+    color: white;
+    -webkit-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    -moz-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+        var(--shadow-blur-radius) var(--shadow-spread-radius)
+        var(--shadow-color);
+}
+
+.navbar {
+    z-index: 100;
+    background-color: #1a3370;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s;
+}
+
+.table {
+    background-color: #1c140f;
+    color: white;
+    -webkit-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    -moz-box-shadow: var(--shadow-horizontal-offset)
+        var(--shadow-vertical-offset) var(--shadow-blur-radius)
+        var(--shadow-spread-radius) var(--shadow-color);
+    box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+        var(--shadow-blur-radius) var(--shadow-spread-radius)
+        var(--shadow-color);
+}
+
+.carousel-item img {
+    height: 400px;
+    border-radius: 10px;
+}
+
+.detail {
+    background-color: #1c140f;
+    color: white;
+}
+
+.detail .tour {
+    width: 60%;
+}
+
+.detail .ticket {
+    width: 30%;
+}
+.detail .ticket .card {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+    background-color: rgb(57, 40, 159);
+    box-shadow: 10px 4px 3px 3px rgba(255, 255, 255, 0.7);
+}
+
+.btn.ctas {
+    background-color: #fa9021;
+    color: white;
+    padding: 5px 40px 5px 40px;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: orange;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.primary-button:active {
+    background-color: #fcf414;
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+footer {
+    background-color: #1a3370;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 910px) {
+    .detail .tour {
+        width: 100%;
+    }
+    .detail .ticket {
+        width: 50%;
+    }
+}
