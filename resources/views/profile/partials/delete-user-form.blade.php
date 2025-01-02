@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card card-name">
     <div class="card-header">{{ __('Delete Account') }}</div>
 
     <div class="card-body">
