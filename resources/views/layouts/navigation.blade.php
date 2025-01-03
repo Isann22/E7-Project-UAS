@@ -16,7 +16,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link }} "
-                            aria-current="page" href="">Tournaments</a>
+                            aria-current="page" href="{{route('tournament.showAllTournaments')}}">Tournaments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
