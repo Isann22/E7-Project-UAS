@@ -17,7 +17,8 @@
             </div>
         </div>
     </div>
-    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<Set your ClientKey here>"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
+    </script>
     <script type="text/javascript">
         document.getElementById('pay-button').onclick = function() {
             // SnapToken acquired from previous step
@@ -25,7 +26,7 @@
                 // Optional
                 onSuccess: function(result) {
                     /* You may add your own js here, this is just example */
-                    window.location.href = "{{ route('orders.index') }}";
+                    window.location.href = "{{ route('orders.history') }}";
                 },
                 // Optional
                 onPending: function(result) {

@@ -46,21 +46,21 @@
             <h1 class="text-center text-light">Tournaments</h1>
             <hr>
             <div class="row">
-        @foreach($tournaments as $tournament)
+                @foreach ($tournaments as $tournament)
                     <div class="col-lg-4 col-md-6 col-sm-12 my-3">
                         <div class="card tournament p-3" style="width: 22rem;">
                             <img src="{{ asset('img/seedimg.png') }}" height="150" class="card-img-top rounded shadow-lg"
                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{$tournament->name}}</h5>
+                                <h5 class="card-title">{{ $tournament->name }}</h5>
                                 <p class="card-text"> {{ $tournament->venue->name }}</p>
                                 <div class="ctas mx-auto">
-                                    <a href="{{route('tournament.show',['id'=>$tournament->id])}}">detail</a>
+                                    <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">detail</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-              @endforeach
+                @endforeach
 
             </div>
             <div class="container d-flex justify-content-center mt-3">
@@ -80,8 +80,7 @@
                             Accordion Item #1
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">Placeholder content for this accordion, which is intended to
                             demonstrate
                             the
@@ -96,8 +95,7 @@
                             Accordion Item #2
                         </button>
                     </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">Placeholder content for this accordion, which is intended to
                             demonstrate
                             the
