@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         $faker = Faker::create();
 
         // Buat 10 user dummy
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 15; $i++) {
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
