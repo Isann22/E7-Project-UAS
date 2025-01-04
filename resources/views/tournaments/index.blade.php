@@ -17,7 +17,7 @@
                                 <p class="card-text"> {{ $tournament->venue->name }}</p>
                                 <p class='card-text'>{{Str::limit($tournament->description,50)}}</p>
                                 <div class="ctas mx-auto">
-                                    <a href="{{route('tournament.show',['id'=>$tournament->id])}}">detail</a>
+                                    <a href="{{route('tournament.show',['id'=>$tournament->id])}}">Cek Disini!</a>
                                 </div>
                             </div>
                         </div>
