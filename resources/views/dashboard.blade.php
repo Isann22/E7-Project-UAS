@@ -47,7 +47,7 @@
                                 <h5 class="card-title">{{ $tournament->name }}</h5>
                                 <p class="card-text"> {{ $tournament->venue->name }}</p>
                                 <div class="ctas mx-auto">
-                                    <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">detail</a>
+                                    <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">Cek Disini</a>
                                 </div>
                             </div>
                         </div>
@@ -125,9 +125,8 @@
                 <h5 class="fw-bold text-uppercase">Presented By</h5>
                 <div class="row justify-content-center g-3">
                     <div class="col-auto">
-                        <img src="{{ asset('img/ROG.png') }}" class="img-fluid" alt="ROG Logo" style="max-height: 50px;">
-                        <img src="{{ asset('img/REDBULL.jpg') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 50px;">
-                        <img src="{{ asset('img/Infinik.png') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/ROG.png') }}" class="img-fluid" alt="ROG Logo" style="max-height: 60px;">
+                        <img src="{{ asset('img/Infinik.png') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 60px;">
                     </div>
                 </div>
             </div>
@@ -156,7 +155,7 @@
                         <img src="{{ asset('img/MNCTV.png') }}" class="img-fluid" alt="Qodiyya Logo" style="max-height: 50px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/Logo_Dua_Kelinci.png') }}" class="img-fluid" alt="UBS Gold Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/Telkomsel.png') }}" class="img-fluid" alt="Ardan Logo" style="max-height: 40px;">
                     </div>
                 </div>
             </div>
@@ -166,16 +165,17 @@
                 <h5 class="fw-bold text-uppercase">Suppliers</h5>
                 <div class="row justify-content-center g-3">
                     <div class="col-auto">
-                        <img src="{{ asset('img/kapalapi.png') }}" class="img-fluid" alt="Indihome Logo" style="max-height: 40px;">
+                        <img src="{{ asset('img/kapalapi.png') }}" class="img-fluid" alt="Indihome Logo" style="max-height: 50px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/linkedin-icon.png') }}" class="img-fluid" alt="Popmart Logo" style="max-height: 40px;">
+                        <img src="{{ asset('img/REDBULL.jpg') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 50px;">
+
                     </div>
                     <div class="col-auto">
                         <img src="{{ asset('img/Indomie.png') }}" class="img-fluid" alt="RSV Logo" style="max-height: 40px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/Telkomsel.png') }}" class="img-fluid" alt="Ardan Logo" style="max-height: 40px;">
+                        <img src="{{ asset('img/Logo_Dua_Kelinci.png') }}" class="img-fluid" alt="UBS Gold Logo" style="max-height: 50px;">
                     </div>
                 </div>
             </div>
