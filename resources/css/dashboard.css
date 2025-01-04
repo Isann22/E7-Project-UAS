@@ -240,3 +240,8 @@ footer {
         border-radius: 2px;
     }
 }
+
+.small-card {
+    transform: scale(0.8); /* Reduce size to 80% */
+}
+
