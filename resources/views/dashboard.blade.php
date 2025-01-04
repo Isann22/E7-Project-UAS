@@ -118,113 +118,68 @@
             </div>
         </div>
     </section>
-    <section class=" py-5 py-xl-6">
-        <div class="container mt-5 mb-5 mb-md-6">
-            <div class="row text-light justify-content-md-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
-                    <h2 class="mb-4 display-5 fw-bold">Our Sponsors</h2>
-                    <p class=" mb-4 mb-md-5">Orci varius natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Pellentesque et neque id ligula mattis commodo.</p>
-                    <hr class="w-50 mx-auto mb-0 text-secondary">
+    <section class="py-5 py-xl-6 bg-white">
+        <div class="container">
+            <!-- Kategori 1 -->
+            <div class="text-center mb-5">
+                <h5 class="fw-bold text-uppercase">Presented By</h5>
+                <div class="row justify-content-center g-3">
+                    <div class="col-auto">
+                        <img src="{{ asset('img/ROG.png') }}" class="img-fluid" alt="ROG Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/REDBULL.jpg') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/Infinik.png') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 50px;">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Kategori 2 -->
+            <div class="text-center mb-5">
+                <h5 class="fw-bold text-uppercase">Supported By</h5>
+                <div class="row justify-content-center g-3">
+                    <div class="col-auto">
+                        <img src="{{ asset('img/Robot.png') }}" class="img-fluid" alt="PBESI Logo" style="max-height: 50px;">
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ asset('img/Shopee.png') }}" class="img-fluid" alt="Good Day Logo" style="max-height: 50px;">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Kategori 3 -->
+            <div class="text-center mb-5">
+                <h5 class="fw-bold text-uppercase">Official Partners</h5>
+                <div class="row justify-content-center g-3">
+                    <div class="col-auto">
+                        <img src="{{ asset('img/Gopay.png') }}" class="img-fluid" alt="Gopay Logo" style="max-height: 50px;">
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ asset('img/MNCTV.png') }}" class="img-fluid" alt="Qodiyya Logo" style="max-height: 50px;">
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ asset('img/Logo_Dua_Kelinci.png') }}" class="img-fluid" alt="UBS Gold Logo" style="max-height: 50px;">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Kategori 4 -->
+            <div class="text-center mb-2 ">
+                <h5 class="fw-bold text-uppercase">Suppliers</h5>
+                <div class="row justify-content-center g-3">
+                    <div class="col-auto">
+                        <img src="{{ asset('img/kapalapi.png') }}" class="img-fluid" alt="Indihome Logo" style="max-height: 40px;">
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ asset('img/linkedin-icon.png') }}" class="img-fluid" alt="Popmart Logo" style="max-height: 40px;">
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ asset('img/Indomie.png') }}" class="img-fluid" alt="RSV Logo" style="max-height: 40px;">
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ asset('img/Telkomsel.png') }}" class="img-fluid" alt="Ardan Logo" style="max-height: 40px;">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container overflow-hidden mt-5">
-            <div class="row gy-5 gy-md-6">
-                <!-- First 4 images as cards -->
-                <div class="col-6 col-md-3 align-self-center text-center">
-                    <div class="card border-0 bg-transparent">
-                        <a href="https://www.instagram.com/ajos_43/"><img src="{{ asset('img/Shopee.svg') }}"
-                                class="card-img-top" width="250" height="100" alt=""></a>
-
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 align-self-center text-center">
-                    <div class="card border-0 bg-transparent">
-                        <img src="{{ asset('img/ROG.png') }}" class="card-img-top" width="250" height="100"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 align-self-center text-center">
-                    <div class="card border-0 bg-transparent">
-                        <img src="{{ asset('img/Garena.png') }}" class="card-img-top" width="250" height="200"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 align-self-center text-center">
-                    <div class="card border-0 bg-transparent">
-                        <img src="{{ asset('img/Telkomsel.png') }}" class="card-img-top" width="250" height="100"
-                            alt="">
-                    </div>
-                </div>
-            </div>
-            {{-- break --}}
-            <div class="row justify-content-center mt-4">
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Logo_Dua_Kelinci.png') }}" class="card-img-top" width="120"
-                            height="65" alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Gopay.png') }}" class="card-img-top" width="100" height="60"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Infinik.png') }}" class="card-img-top" width="80" height="60"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/KapalApi.png') }}" class="card-img-top" width="70" height="50"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Mills.png') }}" class="card-img-top" width="70" height="50"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/MNCTV.png') }}" class="card-img-top" width="70" height="50"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/REDBULL.jpg') }}" class="card-img-top" width="60" height="60"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Robot.png') }}" class="card-img-top" width="70" height="50"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Secretlab.png') }}" class="card-img-top" width="80" height="50"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-6 col-lg-1 text-center">
-                    <div class="card border-0 bg-transparent small-card">
-                        <img src="{{ asset('img/Unipin.png') }}" class="card-img-top" width="100" height="43"
-                            alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
     </section>
+    
 @endsection
