@@ -40,6 +40,9 @@ Route::controller(GoogleController::class)->group(function () {
 Route::get('/test/order', function () {
     return view('orders.index');
 });
+Route::get('/sponsor', function () {
+    return view('sponsor.blade.php');
+});
 
 require __DIR__ . '/auth.php';
 
