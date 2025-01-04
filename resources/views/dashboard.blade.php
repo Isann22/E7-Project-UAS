@@ -34,12 +34,12 @@
         </div>
     @endif
     <section id="tournaments">
-        <div class="container mt-5">
+        <div class="container mt-5 ">
             <h1 class="text-center text-light">Tournaments</h1>
             <hr>
             <div class="row">
                 @foreach ($tournaments as $tournament)
-                    <div class="col-lg-4 col-md-6 col-sm-12 my-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 my-3" data-aos="fade-right">
                         <div class="card tournament p-3" style="width: 22rem;">
                             <img src="{{ asset('img/seedimg.png') }}" height="150" class="card-img-top rounded shadow-lg"
                                 alt="...">
@@ -61,22 +61,19 @@
 
         </div>
 
-        <div class="container my-5">
+        <div class="container my-5" data-aos="fade-up">
             <h1 class="text-center text-light">FAQ</h1>
             <hr>
-            <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample">
+            <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample"style="background-color: #ffff;color: black;">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Accordion Item #1
+                            Bagaimana cara membeli tiket untuk acara eSports?
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                            demonstrate
-                            the
-                            <code>.accordion-flush</code> class. This is the first item's accordion body.
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
+                        <div class="accordion-body">Untuk membeli tiket, cari acara yang Anda inginkan melalui fitur pencarian atau kategori di website. Setelah menemukan acara yang diinginkan, klik untuk melihat detailnya, pilih jenis tiket (reguler, VIP, dll.), dan jumlah tiket yang akan dibeli. Lanjutkan dengan menekan tombol "Beli Sekarang" dan selesaikan pembayaran. E-ticket akan dikirimkan melalui email atau bisa diunduh dari akun Anda di website.
                         </div>
                     </div>
                 </div>
@@ -84,16 +81,11 @@
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Accordion Item #2
+                            Apa saja metode pembayaran yang tersedia?
                         </button>
                     </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                            demonstrate
-                            the
-                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                            this
-                            being filled with some actual content.
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
+                        <div class="accordion-body">Kami menyediakan berbagai metode pembayaran, termasuk kartu kredit atau debit (Visa, Mastercard), transfer bank, dompet digital seperti OVO, GoPay, ShoopePay dan Dana, serta virtual account. Pilih metode pembayaran yang paling sesuai dan pastikan saldo mencukupi sebelum melanjutkan transaksi.
                         </div>
                     </div>
                 </div>
@@ -101,17 +93,25 @@
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            Accordion Item #3
+                            Bagaimana saya bisa memastikan pembayaran saya berhasil?
                         </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                            demonstrate
-                            the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-                            exciting happening here in terms of content, but just filling up the space to make it look, at
-                            least
-                            at first glance, a bit more representative of how this would look in a real-world application.
+                        data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
+                        <div class="accordion-body">Setelah pembayaran berhasil, Anda akan menerima konfirmasi melalui email yang berisi detail pembelian dan e-ticket. Anda juga dapat memeriksa status pembayaran di halaman akun Anda di website. Jika tidak menerima konfirmasi, silakan hubungi layanan pelanggan untuk bantuan lebih lanjut.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Apakah saya bisa memesan tiket untuk acara yang belum diumumkan?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse "
+                        data-bs-parent="#accordionFlushExample" style="background-color: #ffff;color: black;">
+                        <div class="accordion-body">Beberapa acara mungkin menawarkan sistem pre-order atau daftar tunggu sebelum tiket resmi tersedia. Anda bisa mendaftar untuk mendapatkan pemberitahuan saat tiket mulai dijual.
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
         </div>
     </section>
     <section class=" py-5 py-xl-6">
-        <div class="container mt-5 mb-5 mb-md-6">
+        <div class="container mt-5 mb-5 mb-md-6" data-aos="fade-left">
             <div class="row text-light justify-content-md-center">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
                     <h2 class="mb-4 display-5 fw-bold">Our Sponsors</h2>
@@ -129,7 +129,7 @@
                 </div>
             </div>
         </div>
-        <div class="container overflow-hidden mt-5">
+        <div class="container-fluid overflow-hidden mt-5 " style="background-color: ;">
             <div class="row gy-5 gy-md-6">
                 <!-- First 4 images as cards -->
                 <div class="col-6 col-md-3 align-self-center text-center">

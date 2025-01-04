@@ -1,10 +1,10 @@
 <footer class="container-fluid   p-4 rounded shadow-lg text-light" style=" background-color: #1a3370;">
     <div class="d-lg-flex justify-content-between">
         <div>
-            <span>LOGO</span>
+            <span>E7</span>
         </div>
         <div class="copyright">
-            <p>developed and maintained by <a href="#" target="_blank">company</a></p>
+            <p>developed and maintained by <a href="#" target="_blank">Arena Access</a></p>
         </div>
         <div>
             <ul class="d-flex gap-3 list-unstyled">
