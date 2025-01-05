@@ -4,7 +4,7 @@
             <span>E7</span>
         </div>
         <div class="copyright">
-            <p>developed and maintained by <a href="#" target="_blank">Arena Access</a></p>
+            <p>Developed and Maintained by K7 <a href="#" target="_blank">Arena Access</a></p>
         </div>
         <div>
             <ul class="d-flex gap-3 list-unstyled">

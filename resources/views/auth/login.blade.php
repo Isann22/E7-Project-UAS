@@ -4,10 +4,9 @@
     <div class="container d-flex flex-column   flex-lg-row-reverse gap-4  justify-content-center align-items-center">
         <div class="c text-dark">
             <div class="text-white ps-5 ">
-                <h1>login now</h1>
-                <p class="fw-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam in nemo sed sint
-                    libero
-                    reprehenderit eaque ducimus quo quia.</p>
+                <h1>Login Now</h1>
+                <p class="fw-bold">Selamat datang di Arena Access, platform resmi pembelian tiket turnamen game favoritmu.
+                    Masuk untuk mulai memesan tiket dan menjadi bagian dari aksi seru dunia esports!</p>
             </div>
         </div>
         <div class="card d-flex text-white" style="width: 24rem;">

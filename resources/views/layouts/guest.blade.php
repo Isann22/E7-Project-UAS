@@ -14,7 +14,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=poppins:100" rel="stylesheet" />
-    <link rel="shortcut icon" href="{{ asset('img/hehe1.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/arena.png') }}" type="image/x-icon">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/style.css'])
 </head>
