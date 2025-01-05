@@ -1,9 +1,17 @@
 <?php
 
 namespace App\Providers;
-use Illuminate\Pagination\Paginator;
 
+use App\Models\User;
+
+use App\Policies\RolePolicy;
+use App\Policies\UserPolicy;
+use App\Policies\PermissionPolicy;
+use Spatie\Permission\Models\Role;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Permission\Models\Permission;
 
 class AppServiceProvider extends ServiceProvider
 {

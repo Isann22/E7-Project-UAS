@@ -13,7 +13,7 @@ class OrdersTableSeeder extends Seeder
 {
     public function run()
     {
-    $faker = Faker::create();
+        $faker = Faker::create();
 
         $users = User::all();
         $tickets = Ticket::all();
@@ -25,7 +25,6 @@ class OrdersTableSeeder extends Seeder
                 'ticket_id' => $ticket->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'amount' => $faker->randomFloat(2, 0, 100),
                 'qty' => $faker->numberBetween(1, 30),
                 'status' => 'pending',
             ]);

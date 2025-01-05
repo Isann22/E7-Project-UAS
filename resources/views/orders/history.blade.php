@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
     <div class="container mt-3">
         @if (session('success'))
@@ -15,7 +16,25 @@
             </div>
         @endif
 
+
+
+
         <h1 class="mb-3 text-center text-light">Transaksi</h1>
+        <form action="{{ route('orders.filter') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <div class="filter d-flex justify-content-end gap-2">
+                    <label for="status" class="form-label text-white">Start Date
+                        <input type="date" class="form-control" id="start_date" name="tanggal_awal">
+                    </label>
+                    <label for="status" class="form-label text-white">End Date
+                        <input type="date" class="form-control" id="end_date" name="tanggal_akhir">
+                    </label>
+                    <button type="submit" class="btn text-white fs-2"><i class="bi bi-search"></i></button>
+                </div>
+
+            </div>
+        </form>
         @if ($orders->count() > 0)
             <table class="table table-dark table-bordered">
                 <thead>
@@ -43,27 +62,34 @@
                                     <span class="badge badge-warning">Pending</span>
                                 @elseif($order->status == 'completed')
                                     <span class="badge badge-success">Completed</span>
+                                @elseif($order->status == 'canceled')
+                                    <span class="badge badge-danger">Cancelled</span>
                                 @else
                                     <span class="badge badge-secondary">{{ $order->status }}</span>
                                 @endif
                             </td>
                             <td class="d-flex gap-3 justify-content-center">
-                                @if ($order->status != 'completed')
+                                @if ($order->status != 'completed' && $order->status != 'canceled')
                                     <button type="button" class="btn btn-primary pay-button" data-bs-toggle="modal"
                                         data-bs-target="#payModal" data-price="{{ $order->amount }}"
                                         data-qty="{{ $order->qty }}" data-order-id="{{ $order->id }}">
                                         Checkout
                                     </button>
-                                @else
-                                    <button class="btn btn-success">
-                                        Dibayar
-                                    </button>
+                                    <form action="{{ route('orders.update', $order->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                        <input type="hidden" name="amount" value="{{ $order->amount }}">
+                                        <input type="hidden" name="qty" value="{{ $order->qty }}">
+                                        <input type="hidden" name="status" value="canceled">
+                                        <input type="hidden" name="ticket_id" value="{{ $order->ticket_id }}">
+                                        <button type="submit" class="btn btn-danger">Cancel Order</button>
+                                    </form>
+                                @elseif($order->status == 'completed')
+                                    <button class="btn btn-success">Dibayar</button>
+                                @elseif($order->status == 'canceled')
+                                    <button class="btn btn-danger">Cancelled</button>
                                 @endif
-                                <form action="{{ route('orders.destroy', $order->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete Order</button>
-                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -72,6 +98,10 @@
         @else
             <h1 class="text-center text-light">Kosong</h1>
         @endif
+    </div>
+
+    <div class="d-flex justify-content-center mt-3">
+        {{ $orders->links() }}
     </div>
 
     <!-- Modal Form -->
