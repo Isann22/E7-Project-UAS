@@ -42,7 +42,7 @@ class OrderController extends Controller
 
 
         if ($ticket->stock == 0) {
-            return redirect()->back()->with('error', 'Sorry, the ticket is out of stock.');
+            return redirect()->route('dashboard')->with('error', 'Sorry, the ticket is out of stock.');
         }
 
         $ticket->stock -= $request->qty;
@@ -54,14 +54,27 @@ class OrderController extends Controller
         return redirect()->route('orders.history')->with('success', 'Order successfully placed!');
     }
 
-    public function show($id) {}
+    public function filter(Request $request)
+    {
+        $tanggalAwal = $request->input('tanggal_awal');
+        $tanggalAkhir = $request->input('tanggal_akhir');
 
+        $orders = Order::where('user_id', Auth::user()->id);
+
+        if ($tanggalAwal && $tanggalAkhir) {
+            $orders->whereBetween('created_at', [$tanggalAwal, $tanggalAkhir]);
+        }
+
+        $orders = $orders->paginate(5);
+
+        return view('orders.history', compact('orders'));
+    }
     /**
      * Display the specified resource.
      */
     public function history()
     {
-        $orders = Order::where('user_id', Auth::user()->id)->get();
+        $orders = Order::where('user_id', Auth::user()->id)->paginate(5);
         return view('orders.history', compact('orders'));
     }
 
@@ -82,22 +95,25 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Order $order, $id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->user_id = Auth::user()->id;
+        $order->status = $request->input('status');
+        $order->ticket_id = $request->input('ticket_id');
+        $order->qty = $request->input('qty');
+        $order->amount = $request->input('amount');
+
+        $order->save();
+
+        return redirect()->route('orders.history')->with('success', 'Order successfully cancelled!');
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
-    {
-        $order = Order::findOrFail($id);
-
-        if ($order->delete()) {
-         return redirect()->route('orders.history')->with('success', 'Order successfully deleted!');
-        } else {
-            return response()->json(['message' => 'Failed to delete order.'], 500);
-        }
-    }
+    public function destroy($id) {}
 }

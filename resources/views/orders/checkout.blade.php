@@ -10,7 +10,7 @@
                         <p>Name : {{ Auth::user()->name }}</p>
                         <p>Tournament : {{ $payment->order->ticket->tournament->name }}</p>
                         <p> Amount :{{ $payment->amount }}</p>
-                        <p>Payment Method : {{ $payment->payment_method }}</p>
+                        <p>Payment Method : {{ $payment->payment_methode }}</p>
                         <button class="btn btn-primary" id="pay-button">Bayar</button>
                     </div>
                 </div>

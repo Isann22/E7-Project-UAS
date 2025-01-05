@@ -21,7 +21,7 @@ class TicketsTableSeeder extends Seeder
 
         foreach ($tournaments as $tournament) {
             Ticket::create([
-                'price' => $faker->randomFloat(2, 0, 100),
+                'price' => $faker->numberBetween(0, 200000),
                 'stock' => $faker->numberBetween(20, 50),
                 'tournament_id' => $tournament->id,
                 'created_at' => Carbon::now(),

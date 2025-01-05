@@ -27,10 +27,12 @@
             </button>
         </div>
     </div>
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>stest</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    @if (session('error'))
+        <div class="container">
+            <div class="alert alert-danger mt-5 alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         </div>
     @endif
     <section id="tournaments">
@@ -46,9 +48,19 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $tournament->name }}</h5>
                                 <p class="card-text"> {{ $tournament->venue->name }}</p>
-                                <div class="ctas mx-auto">
-                                    <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">Cek Disini</a>
-                                </div>
+                                @foreach ($tournament->tickets as $ticket)
+                                    @if ($ticket->stock > 0)
+                                        <div class="ctas mx-auto">
+                                            <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">Cek
+                                                Disini</a>
+                                        </div>
+                                    @else
+                                        <div class="ctas mx-auto sould-out-overlay">
+                                            <p> SOLD OUT</p>
+                                        </div>
+                                    @endif
+                                @endforeach
+
                             </div>
                         </div>
                     </div>
@@ -64,7 +76,8 @@
         <div class="container my-5" data-aos="fade-up">
             <h1 class="text-center text-light">FAQ</h1>
             <hr>
-            <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample"style="background-color: #ffff;color: black;">
+            <div class="accordion accordion-flush" data-bs-theme="dark"
+                id="accordionFlushExample"style="background-color: #ffff;color: black;">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -72,8 +85,13 @@
                             Bagaimana cara membeli tiket untuk acara eSports?
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
-                        <div class="accordion-body">Untuk membeli tiket, cari acara yang Anda inginkan melalui fitur pencarian atau kategori di website. Setelah menemukan acara yang diinginkan, klik untuk melihat detailnya, pilih jenis tiket (reguler, VIP, dll.), dan jumlah tiket yang akan dibeli. Lanjutkan dengan menekan tombol "Beli Sekarang" dan selesaikan pembayaran. E-ticket akan dikirimkan melalui email atau bisa diunduh dari akun Anda di website.
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
+                        <div class="accordion-body">Untuk membeli tiket, cari acara yang Anda inginkan melalui fitur
+                            pencarian atau kategori di website. Setelah menemukan acara yang diinginkan, klik untuk melihat
+                            detailnya, pilih jenis tiket (reguler, VIP, dll.), dan jumlah tiket yang akan dibeli. Lanjutkan
+                            dengan menekan tombol "Beli Sekarang" dan selesaikan pembayaran. E-ticket akan dikirimkan
+                            melalui email atau bisa diunduh dari akun Anda di website.
                         </div>
                     </div>
                 </div>
@@ -84,8 +102,12 @@
                             Apa saja metode pembayaran yang tersedia?
                         </button>
                     </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
-                        <div class="accordion-body">Kami menyediakan berbagai metode pembayaran, termasuk kartu kredit atau debit (Visa, Mastercard), transfer bank, dompet digital seperti OVO, GoPay, ShoopePay dan Dana, serta virtual account. Pilih metode pembayaran yang paling sesuai dan pastikan saldo mencukupi sebelum melanjutkan transaksi.
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
+                        <div class="accordion-body">Kami menyediakan berbagai metode pembayaran, termasuk kartu kredit atau
+                            debit (Visa, Mastercard), transfer bank, dompet digital seperti OVO, GoPay, ShoopePay dan Dana,
+                            serta virtual account. Pilih metode pembayaran yang paling sesuai dan pastikan saldo mencukupi
+                            sebelum melanjutkan transaksi.
                         </div>
                     </div>
                 </div>
@@ -98,20 +120,26 @@
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse"
                         data-bs-parent="#accordionFlushExample"style="background-color: #ffff;color: black;">
-                        <div class="accordion-body">Setelah pembayaran berhasil, Anda akan menerima konfirmasi melalui email yang berisi detail pembelian dan e-ticket. Anda juga dapat memeriksa status pembayaran di halaman akun Anda di website. Jika tidak menerima konfirmasi, silakan hubungi layanan pelanggan untuk bantuan lebih lanjut.
+                        <div class="accordion-body">Setelah pembayaran berhasil, Anda akan menerima konfirmasi melalui
+                            email yang berisi detail pembelian dan e-ticket. Anda juga dapat memeriksa status pembayaran di
+                            halaman akun Anda di website. Jika tidak menerima konfirmasi, silakan hubungi layanan pelanggan
+                            untuk bantuan lebih lanjut.
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour">
                             Apakah saya bisa memesan tiket untuk acara yang belum diumumkan?
                         </button>
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse "
                         data-bs-parent="#accordionFlushExample" style="background-color: #ffff;color: black;">
-                        <div class="accordion-body">Beberapa acara mungkin menawarkan sistem pre-order atau daftar tunggu sebelum tiket resmi tersedia. Anda bisa mendaftar untuk mendapatkan pemberitahuan saat tiket mulai dijual.
+                        <div class="accordion-body">Beberapa acara mungkin menawarkan sistem pre-order atau daftar tunggu
+                            sebelum tiket resmi tersedia. Anda bisa mendaftar untuk mendapatkan pemberitahuan saat tiket
+                            mulai dijual.
                         </div>
                     </div>
                 </div>
@@ -126,8 +154,10 @@
                 <h5 class="fw-bold text-uppercase">Presented By</h5>
                 <div class="row justify-content-center g-3">
                     <div class="col-auto">
-                        <img src="{{ asset('img/ROG.png') }}" class="img-fluid" alt="ROG Logo" style="max-height: 60px;">
-                        <img src="{{ asset('img/Infinik.png') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 60px;">
+                        <img src="{{ asset('img/ROG.png') }}" class="img-fluid" alt="ROG Logo"
+                            style="max-height: 60px;">
+                        <img src="{{ asset('img/Infinik.png') }}" class="img-fluid" alt="REDBULL Logo"
+                            style="max-height: 60px;">
 
                     </div>
                 </div>
@@ -137,50 +167,58 @@
                 <h5 class="fw-bold text-uppercase">Supported By</h5>
                 <div class="row justify-content-center g-3">
                     <div class="col-auto">
-                        <img src="{{ asset('img/Robot.png') }}" class="img-fluid" alt="PBESI Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/Robot.png') }}" class="img-fluid" alt="PBESI Logo"
+                            style="max-height: 50px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/Shopee.png') }}" class="img-fluid" alt="Good Day Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/Shopee.png') }}" class="img-fluid" alt="Good Day Logo"
+                            style="max-height: 50px;">
                     </div>
                 </div>
             </div>
-    
+
             <!-- Kategori 3 -->
             <div class="text-center mb-5">
                 <h5 class="fw-bold text-uppercase">Official Partners</h5>
                 <div class="row justify-content-center g-3">
                     <div class="col-auto">
-                        <img src="{{ asset('img/Gopay.png') }}" class="img-fluid" alt="Gopay Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/Gopay.png') }}" class="img-fluid" alt="Gopay Logo"
+                            style="max-height: 50px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/MNCTV.png') }}" class="img-fluid" alt="Qodiyya Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/MNCTV.png') }}" class="img-fluid" alt="Qodiyya Logo"
+                            style="max-height: 50px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/Telkomsel.png') }}" class="img-fluid" alt="Ardan Logo" style="max-height: 40px;">
+                        <img src="{{ asset('img/Telkomsel.png') }}" class="img-fluid" alt="Ardan Logo"
+                            style="max-height: 40px;">
                     </div>
                 </div>
             </div>
-    
+
             <!-- Kategori 4 -->
             <div class="text-center mb-2 ">
                 <h5 class="fw-bold text-uppercase">Suppliers</h5>
                 <div class="row justify-content-center g-3">
                     <div class="col-auto">
-                        <img src="{{ asset('img/kapalapi.png') }}" class="img-fluid" alt="Indihome Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/kapalapi.png') }}" class="img-fluid" alt="Indihome Logo"
+                            style="max-height: 50px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/REDBULL.jpg') }}" class="img-fluid" alt="REDBULL Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/REDBULL.jpg') }}" class="img-fluid" alt="REDBULL Logo"
+                            style="max-height: 50px;">
 
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/Indomie.png') }}" class="img-fluid" alt="RSV Logo" style="max-height: 40px;">
+                        <img src="{{ asset('img/Indomie.png') }}" class="img-fluid" alt="RSV Logo"
+                            style="max-height: 40px;">
                     </div>
                     <div class="col-auto">
-                        <img src="{{ asset('img/Logo_Dua_Kelinci.png') }}" class="img-fluid" alt="UBS Gold Logo" style="max-height: 50px;">
+                        <img src="{{ asset('img/Logo_Dua_Kelinci.png') }}" class="img-fluid" alt="UBS Gold Logo"
+                            style="max-height: 50px;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
 @endsection

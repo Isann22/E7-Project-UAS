@@ -14,7 +14,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=poppins:100" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('logo.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('img/hehe1.png') }}" type="image/x-icon">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/style.css'])
 </head>
@@ -29,6 +29,10 @@
                 <ul class="navbar-nav ">
                     <li class="nav-item ">
                         <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page"
+                            href="{{ route('filament.admin.auth.login') }}">Admin</a>
                     </li>
                 </ul>
             </div>

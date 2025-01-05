@@ -10,11 +10,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); 
-            $table->unsignedBigInteger('ticket_id'); 
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('ticket_id');
             $table->integer('qty');
-            $table->decimal('amount', 15, 2); 
-            $table->enum('status', ['pending', 'completed', 'canceled']); 
+            $table->decimal('amount', 15, 2)->nullable();
+            $table->enum('status', ['pending', 'completed', 'canceled']);
             $table->timestamps();
 
             // Menambahkan foreign key
