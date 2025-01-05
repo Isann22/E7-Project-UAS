@@ -2,7 +2,7 @@
     <div class="container ">
         <a class="navbar-brand pe-4" href="#">
 
-            <img src="{{ asset('img/hehe1.png') }}" alt="Logo" width="40" height="24">
+            <img src="{{ asset('img/arena.png') }}" alt="Logo" width="40" height="24">
 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

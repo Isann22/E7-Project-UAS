@@ -5,16 +5,16 @@
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/1.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/satuu.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/2.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/dua.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/3.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/tiga.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/4.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/empat.png') }}" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -36,23 +36,24 @@
         </div>
     @endif
     <section id="tournaments">
-        <div class="container mt-5 ">
+        <div class="container mt-5">
             <h1 class="text-center text-light">Tournaments</h1>
             <hr>
             <div class="row">
-                @foreach ($tournaments as $tournament)
+                @php
+                    $images = ['s10.png', 's11.png', '12.png', '13.png', '14.png', '15.png'];
+                @endphp
+                @foreach ($tournaments as $index => $tournament)
                     <div class="col-lg-4 col-md-6 col-sm-12 my-3" data-aos="fade-right">
                         <div class="card tournament p-3" style="width: 22rem;">
-                            <img src="{{ asset('img/seedimg.png') }}" height="150" class="card-img-top rounded shadow-lg"
-                                alt="...">
+                            <img src="{{ asset('img/' . $images[$index % count($images)]) }}" height="150" class="card-img-top rounded shadow-lg" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $tournament->name }}</h5>
-                                <p class="card-text"> {{ $tournament->venue->name }}</p>
+                                <p class="card-text">{{ $tournament->venue->name }}</p>
                                 @foreach ($tournament->tickets as $ticket)
                                     @if ($ticket->stock > 0)
                                         <div class="ctas mx-auto">
-                                            <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">Cek
-                                                Disini</a>
+                                            <a href="{{ route('tournament.show', ['id' => $tournament->id]) }}">Cek Disini</a>
                                         </div>
                                     @else
                                         <div class="ctas mx-auto sould-out-overlay">
@@ -60,17 +61,14 @@
                                         </div>
                                     @endif
                                 @endforeach
-
                             </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
             <div class="container d-flex justify-content-center mt-3">
                 <a class="fs-5 fw-bold text-light" href="">View More</a>
             </div>
-
         </div>
 
         <div class="container my-5" data-aos="fade-up">
