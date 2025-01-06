@@ -105,6 +105,27 @@ body {
     line-height: 1rem;
     color: rgba(156, 163, 175, 1);
 }
+.primary-button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: orange;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.primary-button:active {
+    background-color: #fcf414;
+    box-shadow: none;
+    transform: translateY(4px);
+}
 
 @media (min-width: 768px) {
     .content .container .c {

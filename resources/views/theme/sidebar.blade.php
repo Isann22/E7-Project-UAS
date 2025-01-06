@@ -39,9 +39,11 @@
             <span>Tickets</span>
         </a>
     </li>
+
+
     <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    <div class="d-flex  justify-content-center">
+        <button class="rounded-circle border-0" id="sidebarToggle" style="position:fixed; bottom:0;"></button>
     </div>
 
 
