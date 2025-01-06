@@ -50,7 +50,7 @@
                             </div>
 
                         </div>
-                        <div class="link-pass">
+                        <div class="link-pass forgot">
                             @if (Route::has('password.request'))
                                 <a class="link-danger-hover" href="{{ route('password.request') }}">
                                     {{ __('Lupa password?') }}
@@ -61,7 +61,7 @@
 
 
                     <div class="mb-1 d-grid my-3" style="height: 40px">
-                        <button class="btn ctas" type="submit">Login</button>
+                        <button class="btn primary-button" type="submit">Login</button>
                     </div>
                     <div class="social-message">
                         <div class="line"></div>
@@ -87,7 +87,7 @@
                     </div>
 
             </div>
-            <div class="mb-3 text-center">
+            <div class="mb-3 text-center registered">
                 <a class="btn btn-link" href="{{ route('register') }}">
                     {{ __('Belum mempunyai akun?') }}
                 </a>

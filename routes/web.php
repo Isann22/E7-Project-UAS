@@ -51,6 +51,7 @@ Route::middleware(['auth', 'verified', 'role:organizer'])->prefix('organizer')->
 
     Route::prefix('tournaments')->name('tournaments.')->group(function () {
         Route::get('/', [orgTournament::class, 'index'])->name('index');
+        Route::get('/export', [orgTournament::class, 'export'])->name('export');
         Route::post('/create', [orgTournament::class, 'store'])->name('store');
         Route::put('/{id}/edit', [orgTournament::class, 'update'])->name('update');
         Route::delete('/{id}', [orgTournament::class, 'destroy'])->name('destroy');

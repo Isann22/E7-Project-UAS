@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Organizer;
 
 use App\Models\Venue;
 use App\Models\Tournament;
+use App\Exports\TournamensExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
 
@@ -76,9 +79,10 @@ class TournamentController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = $tournament->name . '_' . time() . '.' . $image->getClientOriginalExtension();
-                $imagePath = $image->storeAs('public/images', $imageName);
+                $imagePath = Storage::disk('public')->putFileAs('images', $image, $imageName);
                 $tournament->image = $imagePath;
             }
+
 
             $tournament->save();
 
@@ -104,5 +108,10 @@ class TournamentController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('organizer.tournaments.index')->with('error', 'Terjadi kesalahan saat menghapus turnamen.');
         }
+    }
+
+    public function export()
+    {
+        return Excel::download(new TournamensExport, 'Tournament.xlsx');
     }
 }
